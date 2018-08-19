@@ -14,9 +14,11 @@
  * */
 
 // TODO: your code goes here
-
+function sum(a,b){
+    return a+b;
+}
 // uncomment the line below once you have written your code
-// module.exports.sum = sum
+module.exports.sum = sum
 
 /**
  * 2 - multiply
@@ -25,9 +27,11 @@
  * */
 
 // TODO: your code goes here
-
+function multiply(x,y){
+    return x*y;
+}
 // uncomment the line below once you have written your code
-// module.exports.multiply = multiply
+module.exports.multiply = multiply
 
 /**
  * 3 - fullName
@@ -37,9 +41,11 @@
  * */
 
 // TODO: your code goes here
-
+function fullName(firstName,lastName){
+    return `${firstName} ${lastName}`;
+}
 // uncomment the line below once you have written your code
-// module.exports.fullName = fullName
+module.exports.fullName = fullName
 
 /**
  * 4 - createPerson
@@ -49,6 +55,15 @@
  * */
 
 // TODO: your code goes here
-
+function createPerson(name,age,gender){
+    if(typeof name !== 'string' && typeof age !== 'number' && typeof gender !== 'string'){
+        console.log('Please provide correct data types');
+    }
+    return{
+        name : name,
+        age : age,
+        gender : gender
+    }
+}
 // uncomment the line below once you have written your code
-// module.exports.createPerson = createPerson
+module.exports.createPerson = createPerson

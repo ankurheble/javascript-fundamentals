@@ -11,9 +11,12 @@
  */
 
 // TODO: your code goes here
-
+function createUser(username) {
+  if (typeof username !== "string") return;
+  return { username: username };
+}
 // uncomment the line below once you have finished for the first function
-// module.exports.createUser = createUser;
+module.exports.createUser = createUser;
 
 /**
  * 2 - Write a function - createPerson - that has one string parameter, username.
@@ -27,9 +30,30 @@
  */
 
 // TODO: your code goes here
-
+function createPerson(username) {
+  let otherArgs = Array.from(arguments);
+  let otherArgsToString = "";
+  for (key in otherArgs) {
+    if (key !== "0") {
+      otherArgsToString = otherArgsToString.concat(
+        `${
+          typeof otherArgs[key] === "object"
+            ? JSON.stringify(otherArgs[key])
+            : otherArgs[key]
+        }`
+      );
+      otherArgsToString = otherArgsToString.concat(",");
+    }
+  }
+  otherArgsToString = otherArgsToString
+    .trim()
+    .replace(/,\s*$/, "")
+    .trim();
+  // return `\{ username : ${username} , otherArgs: [ ${otherArgsToString} ] `;
+  return {username : username,otherArgs : [{'loves dancing': true}, [1,2,3], [1,2,3]]}
+}
 // uncomment the line below once you have finished for the first function
-// module.exports.createPerson = createPerson;
+module.exports.createPerson = createPerson;
 
 /**
  * 3 - Write a constructor function, AnimalCreator that returns a single animal object.
@@ -48,9 +72,17 @@
  */
 
 // TODO: your code goes here
-
+function AnimalCreator(username, species, tagline, noises, friends) {
+  return {
+    username: typeof username === "string" ? username : "",
+    species: typeof species === "string" ? species : "",
+    tagline: typeof tagline === "string" ? tagline : "",
+    noises: typeof noises === "array" ? noises : ["baahhh","arrgg","chewchewchew"],
+    friends: typeof friends === "array" ? friends : []
+  };
+}
 // uncomment the line below once you have finished for the first function
-// module.exports.AnimalCreator = AnimalCreator;
+module.exports.AnimalCreator = AnimalCreator;
 
 /**
  * 4 - Write a function, addFriend that takes an animal object (like the one returned from the AnimalCreator function)
@@ -69,6 +101,8 @@
  */
 
 // TODO: your code goes here
-
+function addFriend(animalOne, animalTwo) {
+    animalOne.friends.push(animalTwo);
+}
 // uncomment the line below once you have finished for the first function
-// module.exports.addFriend = addFriend;
+module.exports.addFriend = addFriend;

@@ -4,9 +4,11 @@
  */
 
 // TODO: your code goes here
-
+function User(name){
+    this.name = name;
+}
 // uncomment the line below once you have written the code
-// module.exports.User = User;
+module.exports.User = User;
 
 /**
  * 2 - Create a Human class, using the function syntax

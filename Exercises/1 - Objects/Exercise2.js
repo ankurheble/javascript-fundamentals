@@ -38,7 +38,10 @@ for (const prop in obj) {
  */
 
 // TODO: write your `for...in` loop here
-
+let person = require('./Exercise1').person;
+for( key in person){
+  console.log(`${key} = ${person[key]}`)
+}
 /**
  * Method 2 - using `Object.keys()`
  *
@@ -76,3 +79,8 @@ keysInObj.forEach(key => {
  */
 
 // TODO: write your `Object.keys(obj)` loop here
+let persianCat = require('./Exercise1').persianCat;
+let keys = Object.keys(persianCat);
+keys.forEach((key) => {
+  console.log(`${key} = ${keys[key]}`);
+})

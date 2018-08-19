@@ -49,9 +49,16 @@ dog.bark = function() {
  */
 
 // TODO: your code goes here.
-
+let person = {
+  name : 'Ankur',
+  age : 27,
+  gender : 'male',
+  talk : function() {
+    console.log(`My name is ${this.name} and i'm ${this.age} years old ${this.gender}`);
+  }
+}
 // uncomment the line below once you have written your code
-// module.exports.person = person
+module.exports.person = person
 
 /**
  * Create an animal object using the Object constructor.
@@ -69,6 +76,13 @@ dog.bark = function() {
  */
 
 // TODO: your code goes here
+let animal = {
+  type : '',
+  breed : '',
+  name : '',
+  age : 0,
+  talk : function(){}
+}
 
 // uncomment the line below once you have written your code
-// module.exports.animal = animal
+module.exports.animal = animal
